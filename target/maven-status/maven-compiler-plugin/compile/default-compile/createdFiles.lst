@@ -1,0 +1,17 @@
+PageObjects/createFixedAmount.class
+PageObjects/promoObjects.class
+General/Main.class
+Testcases/createSignUpPromo.class
+Testcases/createFreeDeliveryPromo.class
+Testcases/createFixedAmountPromo.class
+PageObjects/createSignUp.class
+Testcases/createPercentagePromo.class
+Testcases/statusPromo.class
+PageObjects/createPercentage.class
+PageObjects/loginObjects.class
+Config/configProperties.class
+Config/ApplicationConfigReader.class
+Testcases/loginTestcase.class
+General/InitMethods.class
+Testcases/searchPromo.class
+PageObjects/createFreeDelivery.class
