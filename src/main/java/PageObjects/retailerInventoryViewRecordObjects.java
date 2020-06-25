@@ -10,7 +10,7 @@ public class retailerInventoryViewRecordObjects {
 
     public static By byRetailers = By.cssSelector("div[title='Retailers']");
     public static By byRetailersInventory = By.cssSelector("div[title='Retailers Inventory']");
-    public static By byView = By.cssSelector("div[title='Test Address']");
+    public static By byView = By.cssSelector("tr[class='MuiTableRow-root MuiTableRow-hover']");
     public static By bySection = By.cssSelector("div[class='section-title']");
 
     public retailerInventoryViewRecordObjects(WebDriver driver)
@@ -29,7 +29,7 @@ public class retailerInventoryViewRecordObjects {
     }
 
     public void clickRecord() throws InterruptedException {
-        driver.findElement(byView).click();
+        driver.findElements(byView).get(0).click();
         Thread.sleep(2000);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(bySection));
         Thread.sleep(2000);

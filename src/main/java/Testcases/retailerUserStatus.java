@@ -12,9 +12,9 @@ public class retailerUserStatus extends Main {
     @Test
     public void statusRetailerUser() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+       // loginTestcase.loginIntoMiza();
         retailerUserStatusObjects obj = new retailerUserStatusObjects(driver);
-        obj.clickRetailers();
+       // obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailerUsers();
         Thread.sleep(2000);

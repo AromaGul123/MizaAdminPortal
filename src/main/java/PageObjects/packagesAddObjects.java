@@ -17,9 +17,10 @@ public class packagesAddObjects {
     public static By byAppBanners= By.cssSelector("div[title='Packages']");
     public static By byCreate = By.cssSelector("a[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn text-white MuiButton-containedPrimary']");
     public static By byName = By.cssSelector("div[class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl']");
-    public static By bySave = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
+    public static By bySave = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn save-btn MuiButton-containedPrimary']");
     public static By byUpload = By.id("contained-button-file");
     public static By bySearchProduct = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/div[1]/div[2]/div/input");
+    public static By byYes = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
 
     public packagesAddObjects(WebDriver driver)
     {
@@ -65,8 +66,13 @@ public class packagesAddObjects {
 
     public void saveDetail() throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(bySave));
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(bySave).click();
+        Thread.sleep(2000);
+    }
+
+    public void yes() throws InterruptedException {
+        driver.findElement(byYes).click();
         Thread.sleep(2000);
     }
 

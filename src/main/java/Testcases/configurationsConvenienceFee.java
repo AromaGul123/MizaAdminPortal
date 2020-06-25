@@ -11,16 +11,16 @@ public class configurationsConvenienceFee extends Main{
     @Test
     public void configurationsConvenienceFee() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+        //loginTestcase.loginIntoMiza();
         configurationsConvenienceFeeObjects obj = new configurationsConvenienceFeeObjects(driver);
         obj.clickConfigurations();
         Thread.sleep(2000);
-        obj.selectConfig("Convenience Fee");
-        Thread.sleep(2000);
+        obj.selectConfig();
+        Thread.sleep(3000);
         obj.selectConvenienceFeeValue();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         obj.save();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
     }
 

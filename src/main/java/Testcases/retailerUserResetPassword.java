@@ -11,9 +11,9 @@ public class retailerUserResetPassword extends Main {
     @Test
     public void resetPasswordRetailerUsers() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+       // loginTestcase.loginIntoMiza();
         retailerUserResetPasswordObjects obj = new retailerUserResetPasswordObjects(driver);
-        obj.clickRetailers();
+       // obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailerUsers();
         Thread.sleep(2000);

@@ -11,16 +11,16 @@ public class retailerUserFilter extends Main{
     @Test
     public void filterRetailerUser() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+        //loginTestcase.loginIntoMiza();
         retailerUserFilterObjects obj = new retailerUserFilterObjects(driver);
-        obj.clickRetailers();
+       // obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailerUser();
         Thread.sleep(1000);
         obj.selectFilter();
         Thread.sleep(1000);
         obj.selectOptions();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
 
     }

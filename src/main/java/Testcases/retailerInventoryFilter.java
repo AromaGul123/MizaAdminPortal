@@ -11,16 +11,16 @@ public class retailerInventoryFilter extends Main{
     @Test
     public void filterRetailerInventory() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+       // loginTestcase.loginIntoMiza();
         retailerInventoryFilterObjects obj = new retailerInventoryFilterObjects(driver);
-        obj.clickRetailers();
+       // obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailersInventory();
         Thread.sleep(1000);
         obj.selectFilter();
         Thread.sleep(1000);
         obj.selectOptions();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
 
     }
 

@@ -1,11 +1,9 @@
 package PageObjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import java.util.List;
+import java.util.Random;
 
 public class retailerInventoryEditObjects {
 
@@ -46,21 +44,43 @@ public class retailerInventoryEditObjects {
         Thread.sleep(2000);
     }
 
+    public int getRandomNumber(){
+        // create instance of Random class
+        Random rand = new Random();
+        // Generate and return Random number with decimal
+        return rand.nextInt();
+    }
+
     public void editHub() throws InterruptedException
     {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byAddress1));
-        driver.findElement(byAddress1).clear();
-        driver.findElement(byAddress1).sendKeys("Test Address 1");
-        Thread.sleep(2000);
+        WebElement element1 = driver.findElement(byAddress1);
+        element1.sendKeys(Keys.BACK_SPACE);
+        for (int i=0;i<20;i++) {
+            driver.findElement(byAddress1).sendKeys(Keys.BACK_SPACE);
+        }
+        element1.sendKeys("Edit Address "+getRandomNumber());
+      //  driver.findElement(byAddress1).sendKeys("Edit Address "+getRandomNumber());
+        Thread.sleep(3000);
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byAddress2));
-        driver.findElement(byAddress2).clear();
-        driver.findElement(byAddress2).sendKeys("Test Address 2");
-        Thread.sleep(2000);
+        WebElement element2 = driver.findElement(byAddress2);
+        element2.sendKeys(Keys.BACK_SPACE);
+        for (int i=0;i<20;i++) {
+            driver.findElement(byAddress2).sendKeys(Keys.BACK_SPACE);
+        }
+        element2.sendKeys("Edit Address "+getRandomNumber());
+       // driver.findElement(byAddress2).sendKeys("Edit Address "+getRandomNumber());
+        Thread.sleep(3000);
 
-        driver.findElement(byHubName).clear();
-        driver.findElement(byHubName).sendKeys("Test Address");
-        Thread.sleep(2000);
+        WebElement element3 = driver.findElement(byHubName);
+        element3.sendKeys(Keys.BACK_SPACE);
+        for (int i=0;i<20;i++) {
+            driver.findElement(byHubName).sendKeys(Keys.BACK_SPACE);
+        }
+        element3.sendKeys("Edit Address "+getRandomNumber());
+       // driver.findElement(byHubName).sendKeys("Edit Address "+getRandomNumber());
+        Thread.sleep(3000);
     }
 
     public void editHubType(String option)
@@ -90,9 +110,7 @@ public class retailerInventoryEditObjects {
     public void save() throws InterruptedException {
         driver.findElement(bySave).click();
         Thread.sleep(2000);
-
     }
-
 
     public void yesNo() throws InterruptedException {
         driver.findElement(byYes).click();

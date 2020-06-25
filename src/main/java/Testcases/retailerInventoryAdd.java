@@ -11,7 +11,7 @@ public class retailerInventoryAdd extends Main{
     @Test
     public void addRetailerInventory() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+       // loginTestcase.loginIntoMiza();
         retailerInventoryAddObjects obj = new retailerInventoryAddObjects(driver);
         obj.clickRetailers();
         Thread.sleep(1000);

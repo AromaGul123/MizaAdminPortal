@@ -11,9 +11,9 @@ public class retailerInventoryViewRecord extends Main {
     @Test
     public void viewRetailerInventory() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+       // loginTestcase.loginIntoMiza();
         retailerInventoryViewRecordObjects obj = new retailerInventoryViewRecordObjects(driver);
-        obj.clickRetailers();
+       // obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailersInventory();
         Thread.sleep(2000);

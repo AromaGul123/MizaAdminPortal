@@ -11,9 +11,9 @@ public class retailerInventoryEdit extends Main{
     @Test
     public void editRetailerInventory() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+       // loginTestcase.loginIntoMiza();
         retailerInventoryEditObjects obj = new retailerInventoryEditObjects(driver);
-        obj.clickRetailers();
+      //  obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailersInventory();
         Thread.sleep(2000);

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
+import java.util.Random;
 
 public class retailerInventoryAddObjects {
 
@@ -45,14 +46,22 @@ public class retailerInventoryAddObjects {
         Thread.sleep(3000);
     }
 
+
+    public int getRandomNumber(){
+        // create instance of Random class
+        Random rand = new Random();
+        // Generate and return Random number with decimal
+        return rand.nextInt();
+    }
+
     public void createNewHub() throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byAddress1));
-        driver.findElement(byAddress1).sendKeys("Test Address 1");
+        driver.findElement(byAddress1).sendKeys("Address "+getRandomNumber());
         Thread.sleep(2000);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byAddress2));
-        driver.findElement(byAddress2).sendKeys("Test Address 2");
+        driver.findElement(byAddress2).sendKeys("Address "+getRandomNumber());
         Thread.sleep(2000);
-        driver.findElement(byHubName).sendKeys("Test Address");
+        driver.findElement(byHubName).sendKeys("Address "+getRandomNumber());
         Thread.sleep(2000);
     }
 

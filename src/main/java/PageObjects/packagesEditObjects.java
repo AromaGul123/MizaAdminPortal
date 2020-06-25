@@ -16,6 +16,8 @@ public class packagesEditObjects {
     public static By bySave = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn save-btn MuiButton-containedPrimary']");
     public static By byUpload = By.id("contained-button-file");
     public static By bySearchProduct = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/div[1]/div[2]/div/input");
+    public static By byYes = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
+
 
     public packagesEditObjects(WebDriver driver)
     {
@@ -62,6 +64,11 @@ public class packagesEditObjects {
     public void saveDetail() throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(bySave));
         driver.findElement(bySave).click();
+        Thread.sleep(2000);
+    }
+
+    public void yes() throws InterruptedException {
+        driver.findElement(byYes).click();
         Thread.sleep(2000);
     }
 

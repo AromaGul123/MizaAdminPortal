@@ -11,14 +11,14 @@ public class retailerUserViewRecord extends Main {
     @Test
     public void viewRetailerUsers() throws InterruptedException {
 
-        loginTestcase.loginIntoMiza();
+        //loginTestcase.loginIntoMiza();
         retailerUserViewRecordObjects obj = new retailerUserViewRecordObjects(driver);
-        obj.clickRetailers();
+        //obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailerUsers();
         Thread.sleep(2000);
         obj.clickRecord();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
     }
 
