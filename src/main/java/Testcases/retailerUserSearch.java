@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 
 public class retailerUserSearch extends Main{
 
-    @Test
-    public void searchRetailerUser() throws InterruptedException  {
+    @Test (description = "Searching retailer's user by name")
+    public void SearchRetailerUser() throws InterruptedException  {
 
         //loginTestcase.loginIntoMiza();
         retailerUserSearchObjects obj = new retailerUserSearchObjects(driver);
-        obj.clickRetailers();
+        //obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailerUsers();
         Thread.sleep(1000);

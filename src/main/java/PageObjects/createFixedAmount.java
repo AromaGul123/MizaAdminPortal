@@ -3,10 +3,15 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.Random;
 
 public class createFixedAmount {
 
     WebDriver driver;
+    WebDriverWait wait;
+
     public static By byCreate = By.cssSelector("a[href='/promos/create']");
     public static By byTitle = By.cssSelector("#root > div > div.main-section > div.route-root > div > div.create-promo-root > div > div.promo-body > div.meta-section > div.MuiFormControl-root.MuiTextField-root.half-field > div > input");
     public static By byDescription = By.cssSelector("#root > div > div.main-section > div.route-root > div > div.create-promo-root > div > div.promo-body > div.meta-section > div:nth-child(2) > div > input");
@@ -18,50 +23,66 @@ public class createFixedAmount {
     public static By bymaxDiscount =  By.cssSelector("#root > div > div.main-section > div.route-root > div > div.create-promo-root > div > div.promo-body > div.form-section > div:nth-child(6) > div.section-fields > div:nth-child(4) > div > input");
     public static By byCreatePromo = By.cssSelector("#root > div > div.main-section > div.route-root > div > div.create-promo-root > div > div.promo-body > div.promo-actions.promo-create-btn > button");
     public static By byYes = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
+    public static By bySuccessMessage = By.cssSelector("div[class='MuiCollapse-wrapperInner']");
 
-    public createFixedAmount(WebDriver driver)
+
+    public createFixedAmount(WebDriver driver,WebDriverWait wait)
     {
         this.driver=driver;
-        //this.wait=wait;
+        this.wait=wait;
+    }
+
+    public int getRandomNumber(){
+        // create instance of Random class
+        Random rand = new Random();
+        // Generate and return Random number with decimal
+        return rand.nextInt();
     }
 
     public void clickCreate() throws InterruptedException {
         driver.findElement(byCreate).click();
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
     }
 
     public void promoDetail() throws InterruptedException {
-        driver.findElement(byTitle).sendKeys("PromoVDFA");
-        Thread.sleep(1000);
+        driver.findElement(byTitle).sendKeys("PromoVDFA "+getRandomNumber());
+        //Thread.sleep(1000);
         driver.findElement(byDescription).sendKeys("This is a valid promo for VD");
-        Thread.sleep(1000);
+       // Thread.sleep(1000);
     }
 
     public void discountDetails() throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byAmountValue));
-        Thread.sleep(1000);
+       // Thread.sleep(1000);
         driver.findElement(byAmountValue).sendKeys("20");
-        Thread.sleep(1000);
-        driver.findElement(byPromoCode).sendKeys("PromoFA");
+      //  Thread.sleep(1000);
+        driver.findElement(byPromoCode).sendKeys("PromoFA"+getRandomNumber());
     }
 
     public void restriction() throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byUsageLimit));
         driver.findElement(byUsageLimit).sendKeys("5");
-        Thread.sleep(1000);
+       // Thread.sleep(1000);
         driver.findElement(byUsageLimitPerUser).sendKeys("5");
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byminAmount));
         driver.findElement(byminAmount).sendKeys("10");
-        Thread.sleep(1000);
+       // Thread.sleep(1000);
         driver.findElement(bymaxDiscount).sendKeys("10");
-        Thread.sleep(1000);
+      //  Thread.sleep(1000);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byCreatePromo));
         driver.findElement(byCreatePromo).click();
 
     }
     public void yes() throws InterruptedException {
         driver.findElement(byYes).click();
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
     }
+    public boolean successMessage() throws InterruptedException {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(bySuccessMessage));
+        driver.findElement(bySuccessMessage).isDisplayed();
+        //Thread.sleep(2000);
+        return true;
+    }
+
 }

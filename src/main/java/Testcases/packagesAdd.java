@@ -1,19 +1,17 @@
 package Testcases;
 
 import General.Main;
-import PageObjects.bannerAddObjects;
 import PageObjects.packagesAddObjects;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import javax.swing.*;
 
 
 public class packagesAdd extends Main{
 
-    @Test
-    public void addPackage() throws InterruptedException {
+    @Test (description = "Adding packages in APP via admin panel")
+    public void AddPackage() throws InterruptedException {
 
-       //loginTestcase.loginIntoMiza();
+      //loginTestcase.loginIntoMiza();
         packagesAddObjects obj = new packagesAddObjects(driver);
         obj.clickPackages();
         Thread.sleep(2000);
@@ -28,8 +26,12 @@ public class packagesAdd extends Main{
         obj.saveDetail();
         Thread.sleep(3000);
         obj.yes();
+        Thread.sleep(1000);
+        boolean result = obj.successMessage();
+        //Thread.sleep(2000);
+        Assert.assertTrue(result);
         Thread.sleep(5000);
-
+        System.out.println("Assertion is "+result);
 
 
     }

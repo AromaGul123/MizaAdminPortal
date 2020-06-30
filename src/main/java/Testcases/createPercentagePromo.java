@@ -1,22 +1,20 @@
 package Testcases;
 
 import General.Main;
-import PageObjects.createFixedAmount;
 import PageObjects.createPercentage;
 import PageObjects.promoObjects;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.sql.SQLException;
 
 public class createPercentagePromo extends Main{
 
-    @Test
-    public static void percentage() throws InterruptedException {
-            //loginTestcase.loginIntoMiza();
+    @Test (description = "Creating percentage promo code")
+    public static void Percentage() throws InterruptedException {
+           loginTestcase.LoginIntoMiza();
             Thread.sleep(2000);
             promoObjects ob = new promoObjects(driver);
             ob.clickPromos();
-            createPercentage obj = new createPercentage(driver);
+            createPercentage obj = new createPercentage(driver,wait);
             obj.clickCreate();
             Thread.sleep(1000);
             obj.promoDetail();
@@ -28,7 +26,12 @@ public class createPercentagePromo extends Main{
             obj.restriction();
             Thread.sleep(2000);
             obj.yes();
+            Thread.sleep(1000);
+            boolean result = obj.successMessage();
+           // Thread.sleep(2000);
+            Assert.assertTrue(result);
             Thread.sleep(5000);
+            System.out.println("Assertion is "+result);
         }
     }
 

@@ -14,6 +14,7 @@ public class retailerUserStatusObjects {
     public static By byRetailerUsers= By.cssSelector("div[title='Retailer Users']");
     public static By byStatus = By.cssSelector("div[title='Retailer is active']");
     public static By byYes = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
+    public static By bySuccessMessage = By.cssSelector("div[class='MuiCollapse-wrapperInner']");
 
     public retailerUserStatusObjects(WebDriver driver)
     {
@@ -40,7 +41,11 @@ public class retailerUserStatusObjects {
         driver.findElement(byYes).click();
         Thread.sleep(4000);
     }
-
+    public boolean successMessage()
+    {
+        driver.findElement(bySuccessMessage).isDisplayed();
+        return true;
+    }
 
 
 

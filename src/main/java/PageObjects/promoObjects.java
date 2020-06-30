@@ -33,7 +33,7 @@ public class promoObjects {
     public void activeStatus() throws InterruptedException {
         driver.findElement(byStatus).click();
         Thread.sleep(2000);
-        driver.findElement(byInactive).click();
+        driver.findElements(byInactive).get(1).click();
         Thread.sleep(2000);
 //        WebElement mySelectedElement = driver.findElement(byStatus);
 //        Select dropdown= new Select(mySelectedElement);

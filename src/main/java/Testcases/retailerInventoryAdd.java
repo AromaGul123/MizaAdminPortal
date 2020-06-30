@@ -3,13 +3,14 @@ package Testcases;
 import General.Main;
 import PageObjects.retailerInventoryAddObjects;
 import PageObjects.retailerInventorySearchObjects;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
 public class retailerInventoryAdd extends Main{
 
-    @Test
-    public void addRetailerInventory() throws InterruptedException {
+    @Test(description = "Adding retailer in retailer inventory")
+    public void AddRetailerInventory() throws InterruptedException {
 
        // loginTestcase.loginIntoMiza();
         retailerInventoryAddObjects obj = new retailerInventoryAddObjects(driver);
@@ -28,7 +29,11 @@ public class retailerInventoryAdd extends Main{
         obj.create();
         Thread.sleep(2000);
         obj.yesNo();
-        Thread.sleep(4000);
+        Thread.sleep(1000);
+        boolean result = obj.successMessage();
+        //Thread.sleep(2000);
+        Assert.assertTrue(result);
+        Thread.sleep(5000);
 
     }
 

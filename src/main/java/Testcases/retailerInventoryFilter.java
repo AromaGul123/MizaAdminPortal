@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 
 public class retailerInventoryFilter extends Main{
 
-    @Test
-    public void filterRetailerInventory() throws InterruptedException {
+    @Test (description = "Filtering retailers as all, active or inactive")
+    public void FilterRetailerInventory() throws InterruptedException {
 
        // loginTestcase.loginIntoMiza();
         retailerInventoryFilterObjects obj = new retailerInventoryFilterObjects(driver);
-       // obj.clickRetailers();
+        //obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailersInventory();
         Thread.sleep(1000);

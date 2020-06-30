@@ -14,6 +14,8 @@ public class retailerUserResetPasswordObjects {
     public static By byResetPassword = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-text theme-btn text-capitalize MuiButton-textPrimary']");
     public static By byPassword = By.xpath("/html/body/div[2]/div[3]/div/div/div[2]/div[1]/div/input");
     public static By bySave = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
+    public static By bySuccessMessage = By.cssSelector("div[class='MuiCollapse-wrapperInner']");
+
 
     public retailerUserResetPasswordObjects(WebDriver driver)
     {
@@ -48,5 +50,10 @@ public class retailerUserResetPasswordObjects {
 
     }
 
+    public boolean successMessage()
+    {
+        driver.findElement(bySuccessMessage).isDisplayed();
+        return true;
+    }
 
 }

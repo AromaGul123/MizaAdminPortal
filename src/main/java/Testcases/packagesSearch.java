@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 public class packagesSearch extends Main{
 
-    @Test
-    public void searchPackages() throws InterruptedException {
+    @Test (description = "Searching packages by package name")
+    public void SearchPackages() throws InterruptedException {
 
         //loginTestcase.loginIntoMiza();
         packagesSearchObjects obj = new packagesSearchObjects(driver);

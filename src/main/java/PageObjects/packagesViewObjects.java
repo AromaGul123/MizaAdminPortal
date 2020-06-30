@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class packagesViewObjects {
+public class  packagesViewObjects {
 
     static WebDriver driver;
 

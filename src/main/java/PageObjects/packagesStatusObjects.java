@@ -14,6 +14,7 @@ public class packagesStatusObjects {
     public static By byPackages = By.cssSelector("div[title='Packages']");
     public static By byStatus = By.cssSelector("div[title='Package is active']");
     public static By byYes = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
+    public static By bySuccessMessage = By.cssSelector("div[class='MuiCollapse-wrapperInner']");
 
     public packagesStatusObjects(WebDriver driver) {
         this.driver = driver;
@@ -34,5 +35,12 @@ public class packagesStatusObjects {
         Thread.sleep(2000);
     }
 
+    public boolean successMessage() throws InterruptedException {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(bySuccessMessage));
+        driver.findElement(bySuccessMessage).isDisplayed();
+        //Thread.sleep(2000);
+        return true;
+
+    }
 
 }

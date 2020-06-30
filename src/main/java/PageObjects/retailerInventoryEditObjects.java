@@ -21,6 +21,8 @@ public class retailerInventoryEditObjects {
     public static By byYes = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
     public static By byRecord = By.cssSelector("tr[class='MuiTableRow-root MuiTableRow-hover']");
     public static By bySave = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained create-btn MuiButton-containedPrimary']");
+    public static By bySuccessMessage = By.cssSelector("div[class='MuiCollapse-wrapperInner']");
+
 
     public retailerInventoryEditObjects(WebDriver driver)
     {
@@ -115,6 +117,11 @@ public class retailerInventoryEditObjects {
     public void yesNo() throws InterruptedException {
         driver.findElement(byYes).click();
         Thread.sleep(2000);
+    }
+    public boolean successMessage()
+    {
+        driver.findElement(bySuccessMessage).isDisplayed();
+        return true;
     }
 
 }

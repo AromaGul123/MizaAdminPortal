@@ -5,18 +5,17 @@ import PageObjects.createFixedAmount;
 import PageObjects.promoObjects;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.sql.SQLException;
 
 public class createFixedAmountPromo extends Main{
 
-    @Test
-    public static void fixedAmount() throws InterruptedException
+    @Test (description = "Creating fixed amount promo code")
+    public static void FixedAmount() throws InterruptedException
     {
-        //loginTestcase.loginIntoMiza();
-        Thread.sleep(2000);
+        loginTestcase.LoginIntoMiza();
+       // Thread.sleep(2000);
         promoObjects ob = new promoObjects(driver);
         ob.clickPromos();
-        createFixedAmount obj = new createFixedAmount(driver);
+        createFixedAmount obj = new createFixedAmount(driver,wait);
         obj.clickCreate();
         Thread.sleep(1000);
         obj.promoDetail();
@@ -26,7 +25,13 @@ public class createFixedAmountPromo extends Main{
         obj.restriction();
         Thread.sleep(2000);
         obj.yes();
+        Thread.sleep(1000);
+        boolean result = obj.successMessage();
+        //Thread.sleep(1000);
+        Assert.assertTrue(result);
         Thread.sleep(5000);
+        System.out.println("Assertion is "+result);
+
     }
 
 

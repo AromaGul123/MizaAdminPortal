@@ -12,6 +12,7 @@ public class retailerUserViewRecordObjects {
     public static By byRetailerUsers = By.cssSelector("div[title='Retailer Users']");
     public static By byView = By.cssSelector("tr[class='MuiTableRow-root MuiTableRow-hover']");
     public static By bySection = By.cssSelector("span[class='mt-2']");
+    public static By byIdNumber = By.cssSelector("button[class='MuiButtonBase-root MuiTab-root MuiTab-textColorInherit tab-root Mui-selected']");
 
     public retailerUserViewRecordObjects(WebDriver driver)
     {
@@ -34,7 +35,11 @@ public class retailerUserViewRecordObjects {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(bySection));
         Thread.sleep(2000);
     }
-
+    public boolean idNumber()
+    {
+        driver.findElement(byIdNumber).isDisplayed();
+        return true;
+    }
 
 
 

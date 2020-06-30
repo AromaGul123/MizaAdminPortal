@@ -1,23 +1,22 @@
 package Testcases;
 
 import General.Main;
-import PageObjects.bannerAddObjects;
 import PageObjects.bannerDeleteObjects;
 import org.testng.annotations.Test;
 
 
 public class bannerDelete extends Main{
 
-    @Test
-    public void deleteBanner() throws InterruptedException {
+    @Test (description = "Deleting banner to APP via Admin Panel")
+    public void DeleteBanner() throws InterruptedException {
 
-       // loginTestcase.loginIntoMiza();
-        bannerDeleteObjects obj = new bannerDeleteObjects(driver);
-//        obj.clickAppBanners();
+        loginTestcase.LoginIntoMiza();
+        bannerDeleteObjects obj = new bannerDeleteObjects(driver,wait);
+        obj.ClickAppBanners();
         Thread.sleep(2000);
-        obj.clickDelete();
+        obj.ClickDelete();
         Thread.sleep(2000);
-        obj.clickTick();
+        obj.ClickTick();
         Thread.sleep(5000);
     }
 

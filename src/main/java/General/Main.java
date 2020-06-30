@@ -15,32 +15,15 @@ import org.testng.annotations.BeforeSuite;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.sql.SQLException;
-//import static General.InitMethods.Environment;
-
-//import static General.InitMethods.Url;
-
 
 /**
  * Created by VenD on 4/16/2018.
  */
 public class Main {
    public static WebDriver driver;
-     public static WebDriverWait wait;
-    public static ExtentReports extentReports;
-    public static ExtentTest extentTest;
-    //public  String  url;
-//    public static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-//    public static final String DB_URL = "jdbc:mysql://bystoredstage.cu7blggvl4kd.eu-west-2.rds.amazonaws.com:3306/bystored_QA1";
-//
-//    public static final String USER = "bystored";
-//    public static final String PASS = "bystored";
-
-
-
-//    public void getUrl()
-//    {
-//    //   return Url;
-//    }
+   public static WebDriverWait wait;
+   public static ExtentReports extentReports;
+   public static ExtentTest extentTest;
 
 
     @BeforeSuite
@@ -53,32 +36,12 @@ public class Main {
 
        System.setProperty("webdriver.chrome.driver","driver/chromedriver");
      // System.setProperty("webdriver.gecko.driver","driver/geckodriver");
-        // TimeUnit.SECONDS.sleep(5);
         driver = new ChromeDriver();
         //driver = new FirefoxDriver();
-        wait= new WebDriverWait(driver,15);
-
-
-        //Db connection
-//        DBConnection.connectDb();
+        wait= new WebDriverWait(driver,5);
 
     }
 
-
-//    @BeforeTest
-//    public  static  void getDriver()
-//    {
-//        System.setProperty("webdriver.chrome.driver","driver/chromedriver1.exe");
-//        // TimeUnit.SECONDS.sleep(5);
-//        driver = new ChromeDriver();
-//
-//
-//        //wait= new WebDriverWait(driver,15);
-//
-//        //driver.navigate().to("http://qa1.bystored.com/");
-//
-//
-//    }
 
     @BeforeMethod
 
@@ -87,11 +50,6 @@ public class Main {
     {
         extentTest = extentReports.startTest(method.getName(), "");
     }
-
-
-
-
-
 
     @AfterMethod(alwaysRun = true)
     public void QuitDriver(ITestResult result) {
@@ -110,28 +68,12 @@ public class Main {
         //driver.quit();
     }
 
-
-
-
-
-
-
-//   @AfterTest
-//    public static  void closeDriver()
-//
-//    {
-//        driver.close();
-//
-//    }
-
     @AfterSuite
     public void endReport() throws SQLException {
         driver.close();
         extentReports.flush();
         extentReports.close();
-//        DBConnection.closeDB();
     }
-
 
 
 }

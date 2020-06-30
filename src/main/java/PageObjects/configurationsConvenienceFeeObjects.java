@@ -1,48 +1,40 @@
 package PageObjects;
 
 import org.openqa.selenium.*;
-
-import java.util.List;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class configurationsConvenienceFeeObjects {
 
-    static WebDriver driver;
+    WebDriver driver;
+    WebDriverWait wait;
+
 
     public static By byConfigurations= By.cssSelector("div[title='Configurations']");
     public static By bySelectConfig = By.cssSelector("div[class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl']");
     public static By bySelectValue = By.cssSelector("input[type='text']");
     public static By bySave = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained create-btn MuiButton-containedPrimary']");
+    public static By bySuccessMessage = By.cssSelector("div[class='MuiSnackbarContent-message']");
 
-    public configurationsConvenienceFeeObjects(WebDriver driver)
+    public configurationsConvenienceFeeObjects(WebDriver driver,WebDriverWait wait)
     {
         this.driver=driver;
+        this.wait=wait;
     }
 
-    public static void clickConfigurations() throws InterruptedException {
+    public void ClickConfigurations() throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(byConfigurations));
         driver.findElement(byConfigurations).click();
-        Thread.sleep(2000);
-    }
-
-    public static void selectConfig() throws InterruptedException {
-        driver.findElement(bySelectConfig).click();
-        Thread.sleep(1000);
-//        WebElement allElements = driver.findElement(By.xpath("//*[@id=\"menu-\"]/div[3]/ul"));
-//        List<WebElement> configList=allElements.findElements(By.tagName("li"));
-//        for (WebElement li : configList) {
-//            if (li.getText().equals(option)) {
-//                li.click();
-//            }
-//        }
-        driver.findElements(By.cssSelector("li[class='MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button']")).get(1).click();
-        Thread.sleep(2000);
-    }
-
-    public static void selectConvenienceFeeValue() throws InterruptedException {
-//      driver.findElement(bySelectValue).clear();
-//        driver.findElement(bySelectValue).sendKeys("10");
 //        Thread.sleep(2000);
+    }
+
+    public void SelectConfig() throws InterruptedException {
+        driver.findElement(bySelectConfig).click();
+        driver.findElements(By.cssSelector("li[class='MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button']")).get(1).click();
+//        Thread.sleep(2000);
+    }
+
+    public void SelectConvenienceFeeValue() throws InterruptedException {
 
         WebElement element = driver.findElement(bySelectValue);
         element.sendKeys(Keys.BACK_SPACE);
@@ -52,9 +44,16 @@ public class configurationsConvenienceFeeObjects {
         element.sendKeys("45");
     }
 
-    public static void save() throws InterruptedException {
+    public void Save() throws InterruptedException {
         driver.findElement(bySave).click();
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
+    }
+
+    public boolean SuccessMessage() throws InterruptedException {
+
+        boolean message= driver.findElement(bySuccessMessage).isDisplayed();
+//        Thread.sleep(2000);
+        return message;
     }
 
 

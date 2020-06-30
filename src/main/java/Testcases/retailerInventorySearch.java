@@ -9,12 +9,12 @@ import static General.Main.driver;
 
 public class retailerInventorySearch extends Main{
 
-    @Test
-    public void searchRetailerInventory() throws InterruptedException {
+    @Test (description = "Searching retailers by name,address and service area")
+    public void SearchRetailerInventory() throws InterruptedException {
 
         //loginTestcase.loginIntoMiza();
         retailerInventorySearchObjects obj = new retailerInventorySearchObjects(driver);
-        obj.clickRetailers();
+       // obj.clickRetailers();
         Thread.sleep(1000);
         obj.clickRetailersInventory();
         Thread.sleep(1000);

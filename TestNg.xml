@@ -1,179 +1,179 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name = "Suite1">
-    <!-- <parameter name="firstName" value="iqra"/>
-     <parameter name="lastName" value="bibi"/>
-     <parameter name="email" value="iqrabibi25@yahoo.com"/>
+    <!-- <parameter name="firstName" value="aroma"/>
+     <parameter name="lastName" value="gul"/>
+     <parameter name="email" value="aroma@yahoo.com"/>
      <parameter name="phoneNumber" value="0345296468524"/>
      <parameter name="description" value="this is my messgae"/>
-     <parameter name="invalidEmail" value="iqrayhoo.com"/>
+     <parameter name="invalidEmail" value="aroma.com"/>
      <parameter name="invalidPhoneNumber" value="eeeeeeeeeeeeee"/>  -->
 
 <test name="Login">
     <classes>
         <class name="Testcases.loginTestcase">
             <methods>
-                <include name="loginIntoMiza"></include>
+                <include name="LoginIntoMiza"></include>
             </methods>
         </class>
     </classes>
 </test>
 
-<!--    <test name="Adding Banner">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.bannerAdd">-->
-<!--                <methods>-->
-<!--                    <include name="addBanner"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--        </test>-->
+    <test name="Adding Banner">
+        <classes>
+            <class name="Testcases.bannerAdd">
+                <methods>
+                    <include name="AddBanner"></include>
+                </methods>
+            </class>
+        </classes>
+        </test>
 
-<!--    <test name="Deleting Banner">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.bannerDelete">-->
-<!--                <methods>-->
-<!--                    <include name="deleteBanner"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Deleting Banner">
+        <classes>
+            <class name="Testcases.bannerDelete">
+                <methods>
+                    <include name="DeleteBanner"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Searching in Promos">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.searchPromo">-->
-<!--                <methods>-->
-<!--                    <include name="searchPromo"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Viewing record in Promos">
+        <classes>
+            <class name="Testcases.promosViewRecord">
+                <methods>
+                    <include name="ViewPromos"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Activating status in Promos">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.statusPromo">-->
-<!--                <methods>-->
-<!--                    <include name="statusPromo"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Activating status in Promos">
+        <classes>
+            <class name="Testcases.promoStatus">
+                <methods>
+                    <include name="StatusPromo"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Viewing record in Promos">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.promosViewRecord">-->
-<!--                <methods>-->
-<!--                    <include name="viewPromos"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Filtering in Promos">
+        <classes>
+            <class name="Testcases.promosFilter">
+                <methods>
+                    <include name="FilterPromos"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Filtering in Promos">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.promosFilter">-->
-<!--                <methods>-->
-<!--                    <include name="filterPromos"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Searching in Promos">
+        <classes>
+            <class name="Testcases.promoSearch">
+                <methods>
+                    <include name="SearchPromo"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Creating Fixed Amount Promo">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.createFixedAmountPromo">-->
-<!--                <methods>-->
-<!--                    <include name="fixedAmount"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Creating Fixed Amount Promo">
+        <classes>
+            <class name="Testcases.createFixedAmountPromo">
+                <methods>
+                    <include name="FixedAmount"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Creating Percentage Promo">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.createPercentagePromo">-->
-<!--                <methods>-->
-<!--                    <include name="percentage"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Creating Percentage Promo">
+        <classes>
+            <class name="Testcases.createPercentagePromo">
+                <methods>
+                    <include name="Percentage"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Creating Free Delivery Promo">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.createFreeDeliveryPromo">-->
-<!--                <methods>-->
-<!--                    <include name="freeDelivery"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Creating Free Delivery Promo">
+        <classes>
+            <class name="Testcases.createFreeDeliveryPromo">
+                <methods>
+                    <include name="FreeDelivery"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Creating SignUp Promo">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.createSignUpPromo">-->
-<!--                <methods>-->
-<!--                    <include name="signUp"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Creating SignUp Promo">
+        <classes>
+            <class name="Testcases.createSignUpPromo">
+                <methods>
+                    <include name="SignUp"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Creating Selected Product Promo">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.createSelectedProductPromo">-->
-<!--                <methods>-->
-<!--                    <include name="selectedProduct"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Creating Selected Product Promo">
+        <classes>
+            <class name="Testcases.createSelectedProductPromo">
+                <methods>
+                    <include name="SelectedProduct"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Filtering Packages">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.packagesFilter">-->
-<!--                <methods>-->
-<!--                    <include name="filterPackages"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Filtering Packages">
+        <classes>
+            <class name="Testcases.packagesFilter">
+                <methods>
+                    <include name="FilterPackages"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Status selection in Packages">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.packagesStatus">-->
-<!--                <methods>-->
-<!--                    <include name="statusPackages"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Status selection in Packages">
+        <classes>
+            <class name="Testcases.packagesStatus">
+                <methods>
+                    <include name="StatusPackages"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Searching Packages">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.packagesSearch">-->
-<!--                <methods>-->
-<!--                    <include name="searchPackages"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Searching Packages">
+        <classes>
+            <class name="Testcases.packagesSearch">
+                <methods>
+                    <include name="SearchPackages"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="View Record in Packages">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.packagesViewRecord">-->
-<!--                <methods>-->
-<!--                    <include name="viewPackages"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="View Record in Packages">
+        <classes>
+            <class name="Testcases.packagesViewRecord">
+                <methods>
+                    <include name="ViewPackages"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
     <test name="Adding Packages">
         <classes>
             <class name="Testcases.packagesAdd">
                 <methods>
-                    <include name="addPackage"></include>
+                    <include name="AddPackage"></include>
                 </methods>
             </class>
         </classes>
@@ -183,163 +183,143 @@
         <classes>
             <class name="Testcases.packagesEdit">
                 <methods>
-                    <include name="editPackage"></include>
+                    <include name="EditPackage"></include>
                 </methods>
             </class>
         </classes>
     </test>
 
-<!--    <test name="Configurations Convenience Fee">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.configurationsConvenienceFee">-->
-<!--                <methods>-->
-<!--                    <include name="configurationsConvenienceFee"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Configurations Convenience Fee">
+        <classes>
+            <class name="Testcases.configurationsConvenienceFee">
+                <methods>
+                    <include name="ConfigurationsConvenienceFee"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Configurations Discount">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.configurationsDiscount">-->
-<!--                <methods>-->
-<!--                    <include name="configurationsDiscount"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Configurations Discount">
+        <classes>
+            <class name="Testcases.configurationsDiscount">
+                <methods>
+                    <include name="ConfigurationsDiscount"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Adding in Retailer Inventory">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerInventoryAdd">-->
-<!--                <methods>-->
-<!--                    <include name="addRetailerInventory"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Adding in Retailer Inventory">
+        <classes>
+            <class name="Testcases.retailerInventoryAdd">
+                <methods>
+                    <include name="AddRetailerInventory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Editing in Retailer Inventory">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerInventoryEdit">-->
-<!--                <methods>-->
-<!--                    <include name="editRetailerInventory"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Editing in Retailer Inventory">
+        <classes>
+            <class name="Testcases.retailerInventoryEdit">
+                <methods>
+                    <include name="EditRetailerInventory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Filtering in Retailer Inventory">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerInventoryFilter">-->
-<!--                <methods>-->
-<!--                    <include name="filterRetailerInventory"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="View record in Retailer Inventory">
+        <classes>
+            <class name="Testcases.retailerInventoryViewRecord">
+                <methods>
+                    <include name="ViewRetailerInventory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Status change in Retailer Inventory">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerInventoryStatus">-->
-<!--                <methods>-->
-<!--                    <include name="statusRetailerInventory"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Status change in Retailer Inventory">
+        <classes>
+            <class name="Testcases.retailerInventoryStatus">
+                <methods>
+                    <include name="StatusRetailerInventory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Filtering in Retailer Inventory">
+        <classes>
+            <class name="Testcases.retailerInventoryFilter">
+                <methods>
+                    <include name="FilterRetailerInventory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Searching in Retailer Inventory">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerInventorySearch">-->
-<!--                <methods>-->
-<!--                    <include name="searchRetailerInventory"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Searching in Retailer Inventory">
+        <classes>
+            <class name="Testcases.retailerInventorySearch">
+                <methods>
+                    <include name="SearchRetailerInventory"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
+    <test name="View record in Retailer User">
+        <classes>
+            <class name="Testcases.retailerUserViewRecord">
+                <methods>
+                    <include name="ViewRetailerUsers"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="View record in Retailer Inventory">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerInventoryViewRecord">-->
-<!--                <methods>-->
-<!--                    <include name="viewRetailerInventory"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Filter in Retailer User">
+        <classes>
+            <class name="Testcases.retailerUserFilter">
+                <methods>
+                    <include name="FilterRetailerUser"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="View record in Retailer User">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerUserViewRecord">-->
-<!--                <methods>-->
-<!--                    <include name="viewRetailerUsers"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Searching in Retailer User">
+        <classes>
+            <class name="Testcases.retailerUserSearch">
+                <methods>
+                    <include name="SearchRetailerUser"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Filter in Retailer User">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerUserFilter">-->
-<!--                <methods>-->
-<!--                    <include name="filterRetailerUser"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Status change in Retailer User">
+        <classes>
+            <class name="Testcases.retailerUserStatus">
+                <methods>
+                    <include name="StatusRetailerUser"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
-<!--    <test name="Searching in Retailer User">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerUserSearch">-->
-<!--                <methods>-->
-<!--                    <include name="searchRetailerUser"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="Status change in Retailer User">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerUserStatus">-->
-<!--                <methods>-->
-<!--                    <include name="statusRetailerUser"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="Reset password in Retailer User">-->
-<!--        <classes>-->
-<!--            <class name="Testcases.retailerUserResetPassword">-->
-<!--                <methods>-->
-<!--                    <include name="resetPasswordRetailerUsers"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Reset password in Retailer User">
+        <classes>
+            <class name="Testcases.retailerUserResetPassword">
+                <methods>
+                    <include name="ResetPasswordRetailerUsers"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 <!--    -->
 <!--    -->
 <!--    -->
 <!--    -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </suite>

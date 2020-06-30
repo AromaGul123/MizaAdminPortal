@@ -1,28 +1,32 @@
 package Testcases;
 
 import General.Main;
-import PageObjects.bannerAddObjects;
 import PageObjects.configurationsConvenienceFeeObjects;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
 public class configurationsConvenienceFee extends Main{
 
-    @Test
-    public void configurationsConvenienceFee() throws InterruptedException {
+    @Test (description = "Adding convenience fee via configurations")
+    public void ConfigurationsConvenienceFee() throws InterruptedException {
 
-        //loginTestcase.loginIntoMiza();
-        configurationsConvenienceFeeObjects obj = new configurationsConvenienceFeeObjects(driver);
-        obj.clickConfigurations();
+        loginTestcase.LoginIntoMiza();
+        configurationsConvenienceFeeObjects obj = new configurationsConvenienceFeeObjects(driver,wait);
+        obj.ClickConfigurations();
         Thread.sleep(2000);
-        obj.selectConfig();
+        obj.SelectConfig();
         Thread.sleep(3000);
-        obj.selectConvenienceFeeValue();
+        obj.SelectConvenienceFeeValue();
         Thread.sleep(3000);
-        obj.save();
+        obj.Save();
+        Thread.sleep(2000);
+        boolean result = obj.SuccessMessage();
+        Thread.sleep(2000);
+        Assert.assertTrue(result);
         Thread.sleep(5000);
-
-    }
+        System.out.println("Assertion is "+result);
+        }
 
 
 }

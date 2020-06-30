@@ -16,13 +16,14 @@ public class retailerInventoryAddObjects {
     public static By byRetailersInventory = By.cssSelector("div[title='Retailers Inventory']");
     public static By byAdd = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn button-root MuiButton-containedPrimary']");
     public static By byCreateNew = By.cssSelector("a[href='/retailer/create']");
-    public static By  byAddress1 = By.name("address1");
+    public static By byAddress1 = By.name("address1");
     public static By byAddress2 = By.name("address2");
     public static By byHubName = By.name("hubName");
     public static By byHubType = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div[4]/div[2]/div");
     public static By byServiceAreas = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div[4]/div[3]/div");
     public static By byCreate = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained create-btn MuiButton-containedPrimary']");
     public static By byYes = By.cssSelector("button[class='MuiButtonBase-root MuiButton-root MuiButton-contained theme-btn MuiButton-containedPrimary']");
+    public static By bySuccessMessage = By.cssSelector("div[class='MuiCollapse-wrapperInner']");
 
     public retailerInventoryAddObjects(WebDriver driver)
     {
@@ -99,4 +100,9 @@ public class retailerInventoryAddObjects {
         Thread.sleep(2000);
     }
 
+    public boolean successMessage()
+    {
+        driver.findElement(bySuccessMessage).isDisplayed();
+        return true;
+    }
 }

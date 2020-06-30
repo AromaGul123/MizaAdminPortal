@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 public class promosFilter extends Main {
 
-    @Test
-    public void filterPromos() throws InterruptedException {
+    @Test (description = "Filtering packages as all, active or inactive")
+    public void FilterPromos() throws InterruptedException {
 
       //  loginTestcase.loginIntoMiza();
        promosFilterObjects obj = new promosFilterObjects(driver);

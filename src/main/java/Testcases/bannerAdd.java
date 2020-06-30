@@ -7,16 +7,14 @@ import org.testng.annotations.Test;
 
 public class bannerAdd extends Main{
 
-    @Test
-    public void addBanner() throws InterruptedException {
+    @Test (description = "Adding banner to APP via Admin Panel")
+    public void AddBanner() throws InterruptedException {
 
-        //loginTestcase.loginIntoMiza();
-        bannerAddObjects obj = new bannerAddObjects(driver);
-        obj.clickAppBanners();
+        loginTestcase.LoginIntoMiza();
+        bannerAddObjects obj = new bannerAddObjects(driver,wait);
+        obj.ClickAppBanners();
         Thread.sleep(2000);
-      //  obj.clickAdd();
-        // Thread.sleep(2000);
-        obj.uploadImage();
+        obj.UploadImage();
         Thread.sleep(5000);
 
     }

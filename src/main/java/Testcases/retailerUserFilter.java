@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 public class retailerUserFilter extends Main{
 
-    @Test
-    public void filterRetailerUser() throws InterruptedException {
+    @Test (description = "Filtering retailer's users as all, active or inactive")
+    public void FilterRetailerUser() throws InterruptedException {
 
         //loginTestcase.loginIntoMiza();
         retailerUserFilterObjects obj = new retailerUserFilterObjects(driver);
